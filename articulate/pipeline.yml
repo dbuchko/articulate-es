@@ -1,0 +1,29 @@
+---
+resources:
+- name: articulate-repo
+  type: git
+  source:
+    uri: https://github.com/eitansuez/articulate.git
+
+- name: deploy-articulate
+  type: cf
+  source:
+    api: {{cf-api}}
+    username: {{cf-username}}
+    password: {{cf-password}}
+    organization: {{cf-organization}}
+    space: {{cf-space}}
+
+jobs:
+- name: build-project
+  public: true
+  serial: true
+  plan:
+  - get: articulate-repo
+    trigger: true
+  - task: maven-build
+    file: articulate-repo/maven-build.yml
+  - put: deploy-articulate
+    params:
+      manifest: articulate-repo/manifest.yml
+      path: artifacts/articulate-0.0.3-SNAPSHOT.jar

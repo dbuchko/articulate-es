@@ -1,0 +1,14 @@
+language: java
+jdk:
+- oraclejdk8
+script: env && ./mvnw package -B
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: esuez@pivotal.io
+  password:
+    secure: UUNwVCsaKa0R6zbCMY52QkmrV8fC70S3CnHa4cqJzhlfAbsliPEgYxBnBlw/ddTXB4YuW4p0rWskZKz63xtlAzWWLEehtVIeNA1ISfRwHInvigO/l6KRmT55UfWtsBfquccWLNVCWPzFDhhnl3Q0kdM/9QWGMM6WOuSxQLBsJYeU8r7Fu+dh5ueLjp8bLBxsio4fWCk0wIjlJeoqti6o89XMF+gc1TP228130BuC3ajbCjuuY+13OKOYj5AVbpxfMdjJqWQFYtxt37+CL3kSftHRoxroin3GgePWKCuMF8ILmnUsu/zWs/yQOG/LIkvmGEXAm/5MVvdkJRmkT5TymKk5beBRPZ7hA/yswLAhEkT8LFSIQuUm1u5JFDK2AMq2T+uteVsDYyOSUb+rxnBKNSFMrbTGJz9tPYgpmZ2br0XZFacZLVZczGe2rkkwH6P7OmDX0LyFC2yHPVZn+Auoi3CtMz+0nXqh2Q3hrmNf2i7CtZtibZ2KKIKQyJMiJ/KTG23g9MptitQjLc4BQHz0agl/mrSbEKhJD35tWPS9Y0Ejg316t3SlkZD8R0P8iiv48Wu1eHo+LOwsFuWTTwtXAsGoFWN2rXDeufIQrERIvZ1AI5DsB8oKti8ialvyRSEtfL8dbuwvkH0bjPDQs74njegfn1UmSYYn8y0PeLdYXME=
+  organization: eitan-org
+  space: eitan-space
+  on:
+    repo: eitansuez/articulate

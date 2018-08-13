@@ -1,0 +1,7 @@
+applications:
+- name: attendee-service
+  path: target/attendee-service-0.0.1-SNAPSHOT.jar
+  memory: 768M
+  host: attendee-service
+  services:
+  - attendees-db
