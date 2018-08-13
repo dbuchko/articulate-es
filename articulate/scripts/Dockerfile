@@ -12,7 +12,7 @@ WORKDIR /
 # RUN apt-get install -y openjdk-8-jre
 
 # Copy the application from its folder to our image
-ADD ../target/articulate-0.0.3-SNAPSHOT.jar /articulate.jar
+ADD articulate-0.0.3-SNAPSHOT.jar /articulate.jar
 
 EXPOSE 8080
 
