@@ -9,6 +9,6 @@ cp articulate/scripts/Dockerfile $docker_tgt_dir
 cp articulate/target/articulate-0.0.3-SNAPSHOT.jar $docker_tgt_dir
 
 # Update the docker image
-docker build $docker_tgt_dir -t dbuchko/articulate
-docker push dbuchko/articulate:latest
-
+docker build $docker_tgt_dir -t harbor.haas-102.pez.pivotal.io/library/articulate:latest
+#docker push dbuchko/articulate:latest
+docker push harbor.haas-102.pez.pivotal.io/library/articulate:latest
