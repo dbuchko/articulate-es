@@ -27,6 +27,6 @@ spec:
     spec:
       containers:
       - name: articulate
-        image: dbuchko/articulate:latest
+        image: harbor.haas-109.pez.pivotal.io/library/articulate:latest
         ports:
         - containerPort: 8080	# This is the port the app listens on
