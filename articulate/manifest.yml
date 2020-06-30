@@ -3,7 +3,6 @@ applications:
 - name: articulate-es
   path: target/articulate-0.0.3-SNAPSHOT.jar
   host: articulate-es
-  memory: 768M 
-  buildpack: java_buildpack
+  memory: 1G
   env:
     ARTICULATE_ATTENDEESERVICE_URI: attendee-service.cfapps.io
